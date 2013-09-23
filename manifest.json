@@ -1,0 +1,16 @@
+{
+    "manifest_version": 2,
+    "name": "Reddit CS GO Trading Flair URL",
+    "description": "This Google Chrome extension automatically turns whatever is in the post flair into a link.",
+    "version": "1.0",
+    "permissions": [
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["http://www.reddit.com/r/GlobalOffensiveTrade/*"],
+            "js": ["jquery.min.js", "autolink.js"]
+        }
+    ],
+    "web_accessible_resources": ["jquery-1.10.2.min.map"]
+}
