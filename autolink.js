@@ -1,11 +1,14 @@
 (function () {
     console.log('Turning flair into links...');
-    $(".tagline > .flair").each(function () {
+    $(document).on('mouseover', '.tagline > .flair', function () {
         var element = $(this);
-        var url = element.html();
-        var link = [
-            '<a href="', url, '">', url, '</a>'
-        ].join('');
-        element.html(link);
+        if (!element.hasClass('autolinked')) {
+            element.addClass('autolinked');
+            var url = element.html();
+            var link = [
+                '<a href="', url, '">', url, '</a>'
+            ].join('');
+            element.html(link);
+        }
     });
 })();
